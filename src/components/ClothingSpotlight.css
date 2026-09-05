@@ -24,8 +24,9 @@
 }
 
 .spotlight-item {
-  flex: 0 0 40vw;
-  max-width: 420px;
+  flex: 0 0 auto;       /* was: flex: 0 0 40vw; */
+  height: 62vh;          /* fixed height drives sizing now */
+  max-width: 42vw;       /* safety cap so very wide/panoramic photos don't dominate */
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
@@ -35,8 +36,9 @@
 }
 
 .spotlight-item img {
-  width: 100%;
-  height: auto;
+  height: 100%;          /* was: width: 100%; height: auto; */
+  width: auto;
+  max-width: 100%;
   object-fit: contain;
   border-radius: 6px;
   box-shadow: 0 20px 48px rgba(46, 33, 29, 0.16);

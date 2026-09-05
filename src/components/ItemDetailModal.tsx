@@ -128,6 +128,8 @@ function ItemDetailModal({ item, originRect, onClose }: Props) {
                   src={photo}
                   alt={`${item.name} photo ${i + 1}`}
                   draggable={false}
+                  loading="lazy"      // add this
+                  decoding="async"    // and this
                 />
               </a>
             </div>
