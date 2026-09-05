@@ -1,0 +1,51 @@
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.75rem 2.5rem;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(18, 11, 6, 0.7), transparent);
+}
+
+.top-bar-title {
+  margin: 0;
+  color: var(--ivory);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 0.15rem;
+}
+
+.top-bar-about-btn {
+  pointer-events: auto;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.55rem 1.3rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.top-bar-about-btn:hover {
+  background: var(--gold);
+  color: var(--espresso);
+}
+
+.top-bar-about-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}

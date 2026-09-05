@@ -1,0 +1,61 @@
+[
+  {
+    "id": "vs-pink-navy-blue-crewneck-4296",
+    "name": "VS Pink Navy Blue Crewneck",
+    "photos": [
+      "https://picsum.photos/seed/crewneck-1/700/900",
+      "https://picsum.photos/seed/crewneck-2/700/900",
+      "https://picsum.photos/seed/crewneck-3/700/900"
+    ],
+    "sourceUrl": "https://www.depop.com/products/example-crewneck-4296/"
+  },
+  {
+    "id": "90s-levis-denim-jacket-1183",
+    "name": "90s Levi's Denim Jacket",
+    "photos": [
+      "https://picsum.photos/seed/denimjacket-1/700/900",
+      "https://picsum.photos/seed/denimjacket-2/700/900",
+      "https://picsum.photos/seed/denimjacket-3/700/900",
+      "https://picsum.photos/seed/denimjacket-4/700/900"
+    ],
+    "sourceUrl": "https://www.depop.com/products/example-denim-jacket-1183/"
+  },
+  {
+    "id": "y2k-cargo-pants-olive-2075",
+    "name": "Y2K Cargo Pants Olive",
+    "photos": [
+      "https://picsum.photos/seed/cargopants-1/700/900",
+      "https://picsum.photos/seed/cargopants-2/700/900"
+    ],
+    "sourceUrl": "https://www.depop.com/products/example-cargo-pants-2075/"
+  },
+  {
+    "id": "vintage-band-tee-faded-black-3390",
+    "name": "Vintage Band Tee Faded Black",
+    "photos": [
+      "https://picsum.photos/seed/bandtee-1/700/900",
+      "https://picsum.photos/seed/bandtee-2/700/900",
+      "https://picsum.photos/seed/bandtee-3/700/900"
+    ],
+    "sourceUrl": "https://www.depop.com/products/example-band-tee-3390/"
+  },
+  {
+    "id": "plaid-flannel-shirt-red-green-0567",
+    "name": "Plaid Flannel Shirt Red Green",
+    "photos": [
+      "https://picsum.photos/seed/flannel-1/700/900",
+      "https://picsum.photos/seed/flannel-2/700/900"
+    ],
+    "sourceUrl": "https://www.depop.com/products/example-flannel-0567/"
+  },
+  {
+    "id": "leather-mini-skirt-black-8842",
+    "name": "Leather Mini Skirt Black",
+    "photos": [
+      "https://picsum.photos/seed/miniskirt-1/700/900",
+      "https://picsum.photos/seed/miniskirt-2/700/900",
+      "https://picsum.photos/seed/miniskirt-3/700/900"
+    ],
+    "sourceUrl": "https://www.depop.com/products/example-mini-skirt-8842/"
+  }
+]

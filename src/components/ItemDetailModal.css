@@ -1,0 +1,190 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-backdrop::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/src/assets/leopard.png') center / cover no-repeat;
+  filter: blur(4px) saturate(1.05) brightness(0.45);
+  transform: scale(1.1);
+  opacity: 0;
+  transition: opacity 0.32s ease, filter 0.32s ease;
+}
+
+.modal-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 11, 6, 0);
+  transition: background 0.32s ease;
+}
+
+.modal-backdrop.is-visible::before {
+  opacity: 1;
+  filter: blur(2px) saturate(1.1) brightness(0.5);
+}
+
+.modal-backdrop.is-visible::after {
+  background: rgba(18, 11, 6, 0.55);
+}
+
+.modal-frame {
+  position: fixed;
+  top: var(--start-top);
+  left: var(--start-left);
+  width: var(--start-width);
+  height: var(--start-height);
+  transition: top 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    left 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--gold);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.modal-frame.is-expanded {
+  top: 8vh;
+  left: 15vw;
+  width: 70vw;
+  height: 84vh;
+}
+
+.modal-photo-scroller {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.modal-photo-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-photo {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--espresso);
+}
+
+.modal-photo-link {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.modal-photo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: rgba(18, 11, 6, 0.6);
+  color: var(--gold);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.modal-info {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ivory);
+}
+
+.modal-item-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+.modal-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.modal-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.modal-dot.is-active {
+  background: var(--gold);
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: rgba(18, 11, 6, 0.6);
+  color: var(--gold);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-nav:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.modal-nav-left {
+  left: 1rem;
+}
+
+.modal-nav-right {
+  right: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-backdrop::before,
+  .modal-backdrop::after,
+  .modal-frame {
+    transition: none;
+  }
+}

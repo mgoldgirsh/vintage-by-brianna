@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --espresso: #120b06;
+  --surface: #1c130b;
+  --caramel: #c9935a;
+  --rust: #7a3f22;
+  --ivory: #f3e8d6;
+  --gold: #cba463;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--espresso);
+  font-family: var(--font-body);
+  color: var(--ivory);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  position: relative;
+}
+
+/* The leopard texture lives here, once, behind everything */
+#root::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: url('/src/assets/leopard.png') center / cover no-repeat;
+  filter: blur(14px) saturate(0.85) brightness(0.4);
+  transform: scale(1.1); /* hides blur edge softening at the viewport border */
+}
+
+#root::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(18, 11, 6, 0.55) 0%,
+    rgba(18, 11, 6, 0.92) 100%
+  );
+}
