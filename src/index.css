@@ -3,12 +3,15 @@
 }
 
 :root {
-  --espresso: #120b06;
-  --surface: #1c130b;
-  --caramel: #c9935a;
-  --rust: #7a3f22;
-  --ivory: #f3e8d6;
-  --gold: #cba463;
+  --cream: #fbf3ee;
+  --cream-deep: #f3e1d8;
+  --blush: #e8a2b4;
+  --blush-deep: #c97c90;
+  --ink: #2e211d;
+  --taupe: #9c8579;
+
+  /* modal-only tokens — the product lightbox intentionally stays dark */
+  --espresso-deep: #08050a;
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -20,9 +23,9 @@ body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
-  background: var(--espresso);
+  background: var(--cream);
   font-family: var(--font-body);
-  color: var(--ivory);
+  color: var(--ink);
 }
 
 #root {
@@ -32,27 +35,4 @@ body {
   padding: 0;
   max-width: none;
   position: relative;
-}
-
-/* The leopard texture lives here, once, behind everything */
-#root::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background: url('/src/assets/leopard.png') center / cover no-repeat;
-  filter: blur(14px) saturate(0.85) brightness(0.4);
-  transform: scale(1.1); /* hides blur edge softening at the viewport border */
-}
-
-#root::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(18, 11, 6, 0.55) 0%,
-    rgba(18, 11, 6, 0.92) 100%
-  );
 }

@@ -5,34 +5,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.modal-backdrop::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('/src/assets/leopard.png') center / cover no-repeat;
-  filter: blur(4px) saturate(1.05) brightness(0.45);
-  transform: scale(1.1);
-  opacity: 0;
-  transition: opacity 0.32s ease, filter 0.32s ease;
-}
-
-.modal-backdrop::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(18, 11, 6, 0);
+  background: rgba(46, 33, 29, 0);
   transition: background 0.32s ease;
 }
 
-.modal-backdrop.is-visible::before {
-  opacity: 1;
-  filter: blur(2px) saturate(1.1) brightness(0.5);
-}
-
-.modal-backdrop.is-visible::after {
-  background: rgba(18, 11, 6, 0.55);
+/* Soft ink tint dims the page behind the modal — enough to focus
+   attention on the garment without turning the whole screen dark */
+.modal-backdrop.is-visible {
+  background: rgba(46, 33, 29, 0.45);
 }
 
 .modal-frame {
@@ -46,9 +26,10 @@
     width 0.32s cubic-bezier(0.22, 1, 0.36, 1),
     height 0.32s cubic-bezier(0.22, 1, 0.36, 1);
   overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid var(--gold);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  border: 1px solid var(--blush);
+  background: var(--cream-deep);
+  box-shadow: 0 30px 70px rgba(46, 33, 29, 0.25);
   z-index: 1;
 }
 
@@ -77,12 +58,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--espresso);
+  background: var(--cream);
 }
 
 .modal-photo-link {
-  position: relative;
-  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,68 +83,86 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  z-index: 10;
+  z-index: 5;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--gold);
-  background: rgba(18, 11, 6, 0.6);
-  color: var(--gold);
+  border: 1px solid var(--blush);
+  background: var(--cream-deep);
+  color: var(--blush-deep);
   font-size: 1.4rem;
   cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.modal-close:hover {
+  background: var(--blush);
+  color: #fff;
 }
 
 .modal-info {
   position: absolute;
-  bottom: 1.25rem;
+  bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  color: var(--ivory);
+  padding: 3rem 1rem 1.25rem;
+  color: var(--ink);
+  /* light scrim keeps the title legible over any photo underneath it */
+  background: linear-gradient(to top, rgba(251, 243, 238, 0.95), transparent);
+  pointer-events: none;
 }
 
 .modal-item-name {
   margin: 0;
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
+  font-size: 1.15rem;
 }
 
 .modal-dots {
   display: flex;
   gap: 0.4rem;
+  pointer-events: auto;
 }
 
 .modal-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--blush-deep);
   background: transparent;
   cursor: pointer;
   padding: 0;
 }
 
 .modal-dot.is-active {
-  background: var(--gold);
+  background: var(--blush-deep);
 }
 
 .modal-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 5;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--gold);
-  background: rgba(18, 11, 6, 0.6);
-  color: var(--gold);
+  border: 1px solid var(--blush);
+  background: var(--cream-deep);
+  color: var(--blush-deep);
   font-size: 1.5rem;
   cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.modal-nav:hover:not(:disabled) {
+  background: var(--blush);
+  color: #fff;
 }
 
 .modal-nav:disabled {
@@ -182,8 +179,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .modal-backdrop::before,
-  .modal-backdrop::after,
+  .modal-backdrop,
   .modal-frame {
     transition: none;
   }
