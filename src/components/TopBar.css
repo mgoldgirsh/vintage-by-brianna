@@ -47,3 +47,26 @@
   outline: 2px solid var(--blush-deep);
   outline-offset: 2px;
 }
+
+.top-bar-title {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-variation-settings: 'opsz' 40; /* Fraunces gets more characterful at display sizes */
+  font-size: 2.4rem;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-decoration: underline;
+  text-decoration-color: var(--blush);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+@media (max-width: 640px) {
+  .top-bar-title {
+    font-size: 1.7rem;
+    text-underline-offset: 6px;
+  }
+}
