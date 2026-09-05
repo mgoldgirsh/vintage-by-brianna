@@ -170,8 +170,6 @@ function ClothingSpotlight({ items }: Props) {
               src={item.photos[0]}
               alt={item.name}
               draggable={false}
-              loading="lazy"      // add this
-              decoding="async"    // and this
             />
             <p className="spotlight-label">{item.name}</p>
           </div>
