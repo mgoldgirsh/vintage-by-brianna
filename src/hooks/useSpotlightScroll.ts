@@ -1,7 +1,8 @@
-import { useEffect, RefObject, MutableRefObject } from 'react'
+import { useEffect } from 'react'
+import type { RefObject, MutableRefObject } from 'react'
 
 export function useSpotlightScroll(
-  containerRef: RefObject<HTMLDivElement>,
+  containerRef: RefObject<HTMLDivElement | null>,
   itemRefs: MutableRefObject<(HTMLDivElement | null)[]>
 ) {
   useEffect(() => {
@@ -23,7 +24,7 @@ export function useSpotlightScroll(
 
         const t = Math.min(distance / maxDistance, 1)
 
-        const brightness = 1 - t * 0.92 // was 0.85 — edges get closer to black
+        const brightness = 1 - t * 0.85
         const scale = 1 - t * 0.22
         const opacity = 1 - t * 0.55
 
