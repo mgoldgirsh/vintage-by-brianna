@@ -7,7 +7,7 @@ function TopBar() {
 
   return (
     <header className="top-bar">
-      <h1 className="top-bar-title">Brianna's Vintage</h1>
+      <h1 className="top-bar-title">Bambi's Vintage Supply</h1>
       <button className="top-bar-about-btn" onClick={scrollToAbout}>
         About
       </button>

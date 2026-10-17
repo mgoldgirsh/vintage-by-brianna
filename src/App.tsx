@@ -4,6 +4,7 @@ import AboutSection from './components/AboutSection'
 import items from './data/items.json'
 import type { ClothingItem } from './components/ClothingSpotlight'
 import './App.css'
+import DepopLink from './components/DepopLink'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <TopBar />
       <ClothingSpotlight items={items as ClothingItem[]} />
       <AboutSection />
+      <DepopLink />
     </>
   )
 }

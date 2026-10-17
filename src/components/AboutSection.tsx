@@ -8,7 +8,7 @@ function AboutSection() {
         <div className="about-text-block">
           <h2 className="about-heading">A little bit about us</h2>
           <p className="about-text">
-            Brianna's Vintage is a hand-picked selection of pre-loved
+            Bambi's Vintage Supply is a hand-picked selection of pre-loved
             clothing, sourced piece by piece for character, quality, and a
             bit of history. Everything here has already lived a life — we're
             just finding it a new one.
