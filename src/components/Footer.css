@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  /* extra bottom padding keeps the text clear of the floating Depop circle */
+  padding: 2rem 1.25rem 5.5rem;
+  background: var(--cream-deep);
+  border-top: 1px solid rgba(46, 33, 29, 0.1);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.footer-text {
+  margin: 0;
+}
+
+.footer-link {
+  color: var(--ink);
+}

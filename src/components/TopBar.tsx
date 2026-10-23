@@ -1,16 +1,15 @@
 import './TopBar.css'
 
 function TopBar() {
-  const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <header className="top-bar">
-      <h1 className="top-bar-title">Bambi's Vintage Supply</h1>
-      <button className="top-bar-about-btn" onClick={scrollToAbout}>
-        About
-      </button>
+      <a className="top-bar-title" href="#top">
+        Bambi’s Vintage Supply
+      </a>
+      <nav className="top-bar-nav" aria-label="Primary">
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+      </nav>
     </header>
   )
 }

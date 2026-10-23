@@ -1,18 +1,37 @@
+import { useState } from 'react'
 import TopBar from './components/TopBar'
-import ClothingSpotlight from './components/ClothingSpotlight'
+import Hero from './components/Hero'
+import Catalog from './components/Catalog'
 import AboutSection from './components/AboutSection'
-import items from './data/items.json'
-import type { ClothingItem } from './components/ClothingSpotlight'
-import './App.css'
+import Footer from './components/Footer'
 import DepopLink from './components/DepopLink'
+import ProductModal from './components/ProductModal'
+import rawProducts from './data/items.json'
+import type { Product } from './types'
+import './App.css'
+
+const products = rawProducts as Product[]
 
 function App() {
+  const [selected, setSelected] = useState<Product | null>(null)
+
   return (
     <>
       <TopBar />
-      <ClothingSpotlight items={items as ClothingItem[]} />
-      <AboutSection />
+      <main>
+        <Hero featured={products[0]} onOpen={setSelected} />
+        <Catalog products={products} onOpen={setSelected} />
+        <AboutSection />
+      </main>
+      <Footer />
       <DepopLink />
+      {selected && (
+        <ProductModal
+          key={selected.id}
+          product={selected}
+          onClose={() => setSelected(null)}
+        />
+      )}
     </>
   )
 }
